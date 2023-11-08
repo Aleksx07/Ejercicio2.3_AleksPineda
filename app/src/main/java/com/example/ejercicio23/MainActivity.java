@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     db.insert(byteArray, descripcion.getText().toString());
                     Toast.makeText(getApplicationContext(), "Guardado en la Base de Datos", Toast.LENGTH_LONG).show();
                     byteArray = new byte[0];
-                    objImagen.setImageResource(R.mipmap.ic_launcher_round);
+                    objImagen.setImageResource(R.drawable.hola);
                     descripcion.setText("");
                 }else{
                     Toast.makeText(getApplicationContext(), "No se ha tomado ninguna fotografia", Toast.LENGTH_LONG).show();
