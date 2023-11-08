@@ -12,7 +12,7 @@
         android:id="@+id/foto"
         android:layout_width="match_parent"
         android:layout_height="324dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         app:srcCompat="@drawable/hola" />
 
     <EditText

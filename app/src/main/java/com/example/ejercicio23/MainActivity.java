@@ -51,14 +51,20 @@ public class MainActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(byteArray.length != 0) {
-                    db.insert(byteArray, descripcion.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Guardado en la Base de Datos", Toast.LENGTH_LONG).show();
-                    byteArray = new byte[0];
-                    objImagen.setImageResource(R.drawable.hola);
-                    descripcion.setText("");
-                }else{
-                    Toast.makeText(getApplicationContext(), "No se ha tomado ninguna fotografia", Toast.LENGTH_LONG).show();
+                if (byteArray.length != 0) {
+                    String descripcionText = descripcion.getText().toString();
+
+                    if (!descripcionText.isEmpty()) {
+                        db.insert(byteArray, descripcionText);
+                        Toast.makeText(getApplicationContext(), "Guardado en la Base de Datos", Toast.LENGTH_LONG).show();
+                        byteArray = new byte[0];
+                        objImagen.setImageResource(R.drawable.hola);
+                        descripcion.setText("");
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Ingrese una descripción", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "No se ha tomado ninguna fotografía", Toast.LENGTH_LONG).show();
                 }
             }
         });
